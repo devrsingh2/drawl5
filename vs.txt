@@ -1,0 +1,36 @@
+<VirtualHost *:80>
+    ServerName auction.localhost
+    ServerAlias *.auction.localhost
+
+    # public path, serving content
+    #DocumentRoot /var/www/html/reverse-auction/public
+    DocumentRoot /var/www/html/reverse-auction
+    # default document handling
+    DirectoryIndex index.html index.php
+
+
+    # allow cross domain loading of resources
+    Header set Access-Control-Allow-Origin "*"
+
+    # logging
+     ErrorLog /var/www/html/reverse-auction/storage/logs/app-root.error.log
+     CustomLog /var/www/html/reverse-auction/storage/logs/app-root.access.log combined
+
+    <Directory "/var/www/html/reverse-auction">
+        #Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+/*
+
+//If you found any invalid check sum issue in this laravel paytm package . Go to App/vendor/anandsiddharth/laravel-paytm-wallet/lib/encdec_paytm.php file. Next file the function checkString_e() and replace the function to below code here :
+function checkString_e($value) {
+     $myvalue = ltrim($value);
+     $myvalue = rtrim($myvalue);
+    if (in_array($myvalue, ['null', 'NULL']))
+         $myvalue = '';
+     return $myvalue;
+ }
+ */

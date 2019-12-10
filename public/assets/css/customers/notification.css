@@ -1,0 +1,95 @@
+.dropdown-menu-media {
+    width: 24rem !important;
+    position: absolute;
+}
+.dropdown-menu-media .dropdown-menu-header {
+    border-bottom: 1px solid #E4E5EC;
+}
+.notification-nav .show > .dropdown-menu {
+    -webkit-transform: scale(1,1);
+    -moz-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -o-transform: scale(1,1);
+    transform: scale(1,1);
+    opacity: 1;
+    display: block;
+}
+.dropdown-menu-media .media-list .media {
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #E4E5EC;
+}
+.notification-nav li {
+    line-height: 1;
+}
+.dropdown-menu .dropdown-header {
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #626E82;
+}
+.badge.badge.float-right {
+    margin-left: .5rem;
+    margin-top: .15rem;
+}
+.dropdown-notification .notification-tag {
+    position: relative;
+    top: -28px;
+    right: 20px;
+}
+.badge-danger {
+    background-color: #FF4961;
+}
+.badge {
+    font-weight: 400;
+}
+.badge, .badge[class*="badge-"] a {
+    color: #FFF;
+}
+.notification-nav ul.nav li .scrollable-container {
+    position: relative;
+}
+.notification-nav ul.nav li .media-list {
+    max-height: 18.2rem;
+    top: -20px;
+}
+.notification-nav a {
+    color: #1E9FF2;
+    font-size: 15px !important;
+}
+.notification-nav a {
+    color: #5059E5;
+    text-decoration: none;
+    background-color: transparent;
+}
+.media-list .media .media-left {
+    padding-right: 1rem;
+    float: left;
+}
+.align-self-center {
+    -webkit-align-self: center !important;
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+}
+.icon-bg-circle {
+    color: #FFF;
+}
+.red.darken-1 {
+    color: #E53935 !important;
+}
+.dropdown-notification .notification-text {
+    margin-bottom: .5rem;
+}
+.notification-nav .dropdown-menu-media .dropdown-menu-footer {
+    position: relative;
+    top: -20px;
+}
+.notification-nav .dropdown-menu-media .dropdown-menu-footer a {
+    padding: .3rem;
+    border-top: 1px solid #E4E5EC;
+    margin-bottom: -20px;
+}
+.notification-nav .dropdown .dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    width: 100%;
+}
