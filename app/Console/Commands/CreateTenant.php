@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 
 class CreateTenant extends Command
 {
-    protected $signature = 'tenant:create {name} {password} {email}';
+    protected $signature = 'tenantold:create {name} {password} {email}';
 
     protected $description = 'Creates a tenant with the provided name and email address e.g. php artisan tenant:create boise test boise@example.com';
 
