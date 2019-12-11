@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'name' => str_replace('-', ' ', env('APP_NAME', 'Reverse Auction')),
+    'name' => str_replace('-', ' ', env('APP_NAME', 'DrawerApp')),
 
     /*
     |--------------------------------------------------------------------------

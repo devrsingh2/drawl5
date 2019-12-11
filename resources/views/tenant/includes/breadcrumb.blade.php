@@ -1,14 +1,21 @@
-<section class="page-title-section section-padding">
+<!-- Breadcrumb Area Start -->
+<div class="breadcrumb-area">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="title-center">
-                    <div class="title-middle">
-                        <h2 class="page-tagline">{{ $pagetitle }}</h2>
-                        <h1 class="page-title">{{ $page_sub_title }}</h1>
-                    </div>
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('home') }}"><i class="icon_house_alt"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ $pagetitle }}</li>
+                            {{--{{ $page_sub_title }}--}}
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+<!-- Breadcrumb Area End -->

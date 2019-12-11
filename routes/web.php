@@ -83,9 +83,9 @@ Route::prefix('user')->group(function () {
 Route::post('/customized-register', 'Auth\RegisterController@createUser')->name('user.customized-register');
 Route::post('change-status', 'NotificationController@changeNotificationStatus')->name('notification.change-status');
 Route::get('get-notification', 'NotificationController@userNotification')->name('get-notification');
-Route::get('pages/{slug}', 'Admin\CmsController@getCmsPages');
+Route::get('pages/{slug}', 'Admin\CmsController@getCmsPages')->name('cms');
 Route::get('faq', 'FaqController@getFaqPage')->name('get-faq');
-Route::get('blog', 'BlogController@getBlogPage')->name('get-blog');
+Route::get('blog', 'BlogController@getBlogPage')->name('blogs');
 Route::get('blog-detail/{id}', 'BlogController@getBlogDetail')->name('blog-detail');
 
 Route::get('contact-us', 'HomeController@contactUs')->name('contact-us');

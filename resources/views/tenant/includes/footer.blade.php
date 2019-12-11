@@ -1,126 +1,135 @@
+<footer class="footer-area section-padding-80-0">
+    <!-- Main Footer Area -->
+    <div class="main-footer-area">
+        <div class="container">
+            <div class="row justify-content-between">
 
-<footer class="page-footer center-on-small-only  pt-0 footer-widget-container">
+                <!-- Single Footer Widget Area -->
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Products</h5>
 
-    <div class="container pt-5 mb-5">
-        <div class="row">
-
-            <div class="col-md-6 col-lg-3 col-xl-3 footer-contact-widget">
-                <h3 class="footer-title">About Us</h3>
-                <p>A powerful Reverse Auction Portal, that connect business and technology teams to align strategy with outcomes at enterprise scale.</p>
-                <ul>
-                    <li>
-                        <a href="{{ config('app.url') }}#"><i class="mdi mdi-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{ config('app.url') }}#"><i class="mdi mdi-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{ config('app.url') }}#"><i class="mdi mdi-dribbble"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{ config('app.url') }}#"><i class="mdi mdi-github-circle"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{ config('app.url') }}#"><i class="mdi mdi-linkedin"></i></a>
-                    </li>
-                </ul>
-            </div>
-
-
-            <div class="col-md-6 col-lg-3 col-xl-3 recent-widget">
-                <h3 class="footer-title">Recent Products</h3>
-                @php
-                    $footer_products = \App\Product::take(5)
-                    ->orderBy('id', 'desc')
-                    ->get();
-                @endphp
-                <ul class="image-list">
-                    @if((isset($footer_products)))
-                        @foreach($footer_products as $product)
-                            <li>
-                                <figure class="overlay">
-                                    @if(isset($product->productAdditional))
-                                        <img class="img-fluid" src="{{asset('public/img/product').'/'.$product->productAdditional->attachment}}" alt="">
-                                    @else
-                                        <img class="img-fluid" src="{{ asset('public/assets/images/picture.png') }}" alt="">
-                                    @endif
-                                    <figcaption><a href="{{ route('place-requirement', [$product->id]) }}"><i class="mdi mdi-link-variant from-top icon-xs"></i></a></figcaption>
-                                </figure>
-                                <div class="post-content">
-                                    <h6 class="post-title">
-                                        <a href="{{ route('place-requirement', [$product->id]) }}">{{$product->name}}</a>
-                                    </h6>
-                                    <div class="meta">
-                                        <span class="date">{{$product->created_at}}</span>
-                                    </div>
-                                </div>
-                            </li>
-                        @endforeach
-                    @endif
-                </ul>
-            </div>
-
-
-            <div class="col-md-6 col-lg-3 col-xl-3 link-widget">
-                <h3 class="footer-title">Get in Touch</h3>
-                {{--<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus.</p>
-                <div class="mt-3"></div>--}}
-                <ul class="icon-list">
-                    <li><i class="mdi mdi-map-marker"></i> Magarpatta City, Hadapsar, Pune, Maharashtra 411013 </li>
-                    <li><i class="mdi mdi-email"></i> <a href="mailto:{{ \App\Setting::find(3)->value }}" class="nocolor">{{ \App\Setting::find(3)->value }}</a> </li>
-                    <li><i class="mdi mdi-phone-classic"></i> {{ \App\Setting::find(4)->value }} </li>
-                    {{--<li><i class="mdi mdi-cellphone-iphone"></i> +91 {{ \App\Setting::find(4)->value }} </li>--}}
-                </ul>
-            </div>
-
-
-            <div class="col-md-6 col-lg-3 col-xl-3 footer-contact">
-                <h3 class="footer-title">Subscribe</h3>
-                <div class="widget">
-                    <div class="newsletter-wrapper">
-                        <form method="post" id="subscribe-form" name="subscribe-form" class="validate" action="{{route('customer.join-newsletter')}}">
-                           @csrf
-                            <div class="form-group">
-                                <input type="email" value="" name="email" class="email form-control" id="email" placeholder="Email Address" required="">
-                                <button type="button" name="subscribe" id="subscribe" class="btn btn-common pull-right">Join</button>
-                                <div class="clearfix"></div>
-                            </div>
-                        </form>
+                        <!-- Footer Nav -->
+                        <ul class="footer-nav">
+                            <li><a href="#">Shared hosting</a></li>
+                            <li><a href="#">WordPress hosting</a></li>
+                            <li><a href="#">Vps hosting</a></li>
+                            <li><a href="#">Dedicated hosting</a></li>
+                            <li><a href="#">Reseller hosting</a></li>
+                            <li><a href="#">Hosting features</a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="widget">
-                    <h5 class="widget-title">Useful Links</h5>
-                    <ul class="unordered-list">
-                        <li><a href="{{ config('app.url') }}#" class="nocolor">Terms of Use</a></li>
-                        <li><a href="{{ config('app.url') }}#" class="nocolor">Privacy Policy</a></li>
-                        <li><a href="{{ config('app.url') }}#" class="nocolor">Company Profile</a></li>
-                        <li><a href="{{ config('app.url') }}#" class="nocolor">Why Choose Us</a></li>
-                    </ul>
-                </div>
-            </div>
+                <!-- Single Footer Widget Area -->
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Programs</h5>
 
+                        <!-- Footer Nav -->
+                        <ul class="footer-nav">
+                            <li><a href="#">WordPress</a></li>
+                            <li><a href="#">Affiliates</a></li>
+                            <li><a href="#">Marketing services</a></li>
+                            <li><a href="#">WordPress guide</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Awards &amp; Reviews</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget Area -->
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Products</h5>
+
+                        <!-- Footer Nav -->
+                        <ul class="footer-nav">
+                            <li><a href="#">Shared hosting</a></li>
+                            <li><a href="#">WordPress hosting</a></li>
+                            <li><a href="#">Vps hosting</a></li>
+                            <li><a href="#">Dedicated hosting</a></li>
+                            <li><a href="#">Reseller hosting</a></li>
+                            <li><a href="#">Hosting features</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget Area -->
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Company</h5>
+
+                        <!-- Footer Nav -->
+                        <ul class="footer-nav">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget Area -->
+                <div class="col-12 col-sm-8 col-lg-4">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Subscribe Newsletter</h5>
+
+                        <p>Subscribe to our email newsletter for useful tips and valuable resources.</p>
+
+                        <!-- Newsletter Form -->
+                        <form action="{{ route('home') }}" class="nl-form">
+                            <input type="email" class="form-control" placeholder="Your Mail">
+                            <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        </form>
+
+                        <!-- Social Info -->
+                        <div class="social-info">
+                            <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" class="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-
-
-    <div class="footer-copyright">
+    <!-- Bottom Footer Area -->
+    <div class="bottom-footer-area bg-gray">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>&copy; {{ date('Y') }} - {{ date('Y') + 1 }} {{ config('app.name') }}, All right reserved. Designed & Developed with <i class="mdi mdi-heart"></i> by <a href="http://{{ config('app.domain') }}" target="_blank">{{ config('app.name') }}</a></p>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <!-- Copywrite Text -->
+                    <div class="copywrite-text">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i style="color: red" class="fa fa-heart-o" aria-hidden="true"></i> by <a href="{{ config('app.url') }}" target="_blank">{{ config('app.name') }}</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Payment Methods -->
+                    <div class="payments-methods d-flex align-items-center">
+                        <p>Payments We Accept</p>
+                        <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                        <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+                        <i class="fa fa-cc-discover" aria-hidden="true"></i>
+                        <i class="fa fa-cc-amex" aria-hidden="true"></i>
+                        <i class="fa fa-cc-paypal" aria-hidden="true"></i>
+                        <i class="fa fa-cc-stripe" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </footer>
-
-<a href="{{ config('app.url') }}#" class="back-to-top">
-    <div class="ripple-container"></div>
-    <i class="mdi mdi-arrow-up">
-    </i>
-</a>
-{{--<div id="preloader">
-    <div class="loader" id="loader-1"></div>
-</div>--}}

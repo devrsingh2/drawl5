@@ -10,7 +10,6 @@
 
 @endsection
 @section('content')
-
     @include('tenant.includes.breadcrumb')
     <section class="Material-contact-section section-padding">
         <div class="container">

@@ -9,7 +9,7 @@
     <!-- Fontawesome -->
     <script defer src="//use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
     {{--<link rel="stylesheet" href="{{ mix('app_admin/css/app.css') }}">--}}
-    <link rel="stylesheet" href="{{ asset('/app_admin/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/master/backend/css/app.css') }}">
     <title>@yield('title', 'Demo') - {{ config('app.name') }}</title>
 </head>
 <body>
@@ -61,8 +61,8 @@
     @yield('content')
 </div>
 {{--<script src="{{ mix('app_admin/js/app.js') }}"></script>--}}
-<script src="{{ asset('/app_admin/js/jquery-3.1.1.min.js') }}"></script>
-<script src="{{ asset('/app_admin/js/app.js') }}"></script>
+<script src="{{ asset('assets/master/backend/js/jquery-3.1.1.min.js') }}"></script>
+<script src="{{ asset('assets/master/backend/js/app.js') }}"></script>
 <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
 </body>
 </html>
