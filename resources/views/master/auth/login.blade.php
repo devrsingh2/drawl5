@@ -28,15 +28,6 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Authentication</h4>
-            {{--@if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif--}}
             <form id="frm_login" method="post" action="{{ route('admin.login.post') }}">
                 {{ csrf_field() }}
                 @if(isset($errors) && count($errors) > 0)
@@ -60,11 +51,6 @@
                         <input id="password" name="password" type="password" class="form-control" name="password" placeholder="******" />
                         <a href="{{ route('admin.forgot-password') }}">Forgot?</a>
                     </div>
-                    {{--<div class="text-right">
-                        <a href="#" class="small">
-                            Forgot your password?
-                        </a>
-                    </div>--}}
                 </div>
 
                 <div class="form-group">

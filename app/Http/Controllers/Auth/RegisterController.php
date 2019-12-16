@@ -57,13 +57,18 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
 
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'terms' =>'required',
-            'phone' =>'required'
-        ],['terms.required' => 'Please check terms and condtions']);
+        return Validator::make($data,
+            [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'terms' =>'required',
+                'phone' =>'required'
+            ],
+            [
+                'terms.required' => 'Please check terms and privacy'
+            ]
+        );
     }
 
     /**
@@ -72,7 +77,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function createUser(Request $request)
+    protected function postRegister(Request $request)
     {
         if($request->terms){
             $request->merge(['terms' => 'on']);
@@ -99,6 +104,7 @@ class RegisterController extends Controller
         return redirect('/login')->with('status', 'We sent you an activation code. Check your email.');
         //return view('auth.login')->with('status', 'We sent you an activation code. Check your email.');
     }
+
     protected  function verifyUserEmail($activation_code)
     {
         $user_activation = User::where('activation_code', $activation_code)->first();

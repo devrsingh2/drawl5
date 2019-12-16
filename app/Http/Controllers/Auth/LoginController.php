@@ -45,23 +45,22 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'account_status' => '1'])) {
+        if (auth()->attempt(['email' => $request->email, 'password' => $request->password, 'account_status' => '1'])) {
             // Authentication passed...
 //            $redirectTo="/home";
-
-            $role = Auth::user()->role;
+            $role = auth()->user()->role;
+//            dd($role);
             switch ($role) {
                 case 1:
                     $redirectTo="/admin";
                     break;
-                case 2:
+                /*case 2:
                     $redirectTo="/admin";
-                    break;
-                case 3:
+                    break;*/
+                /*case 3:
                     $redirectTo="/vendors/dashboard";
-                    break;
-                case 4:
+                    break;*/
+                case 2:
                     $redirectTo="/home";
                     break;
                 default:

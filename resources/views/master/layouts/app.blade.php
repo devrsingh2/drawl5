@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fontawesome -->
     <script defer src="//use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
-    <link rel="stylesheet" href="{{ asset('/app_admin/app/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/master/backend/css/app.css') }}">
     <title>@yield('title', 'Demo') - {{ config('app.name') }}</title>
 </head>
 <body class="is-no-margin">
@@ -35,7 +35,7 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('/app_admin/js/jquery-3.1.1.min.js') }}"></script>
-<script src="{{ asset('/app_admin/app/js/app.js') }}"></script>
+<script src="{{ asset('assets/master/backend/js/jquery-3.1.1.min.js') }}"></script>
+<script src="{{ asset('assets/master/backend/js/app.js') }}"></script>
 </body>
 </html>
