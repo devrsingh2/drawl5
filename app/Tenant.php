@@ -88,6 +88,7 @@ class Tenant
         app(HostnameRepository::class)->attach($hostname, $website);
         // make hostname current
         app(Environment::class)->tenant($hostname->website);
+        Artisan::call('passport:install');
         // Make the registered user the default Admin of the site.
         $admin = static::makeAdmin($name, $email, $password);
         return new Tenant($website, $hostname, $admin);
@@ -100,6 +101,7 @@ class Tenant
             'email' => $email,
             'email_verified' => true,
             'account_status' => '1',
+            'role' => 1,
             'password' => Hash::make($password)
         ];
         $admin = User::create($userData);
