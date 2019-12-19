@@ -97,7 +97,7 @@ Route::get('blog', 'BlogController@getBlogPage')->name('blogs');
 Route::get('blog-detail/{id}', 'BlogController@getBlogDetail')->name('blog-detail');
 
 Route::get('contact-us', 'HomeController@contactUs')->name('contact-us');
-Route::post('contact-us', 'CustomerController@contactUs')->name('submit-contact-us');
+Route::post('contact-us', 'ContactUsController@contactUs')->name('submit-contact-us');
 
 
 /*for testing*/

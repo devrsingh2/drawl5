@@ -45,6 +45,11 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required',
+            'account_status' => '1'
+        ]);
         if (auth()->attempt(['email' => $request->email, 'password' => $request->password, 'account_status' => '1'])) {
             // Authentication passed...
 //            $redirectTo="/home";
@@ -54,12 +59,6 @@ class LoginController extends Controller
                 case 1:
                     $redirectTo="/admin";
                     break;
-                /*case 2:
-                    $redirectTo="/admin";
-                    break;*/
-                /*case 3:
-                    $redirectTo="/vendors/dashboard";
-                    break;*/
                 case 2:
                     $redirectTo="/home";
                     break;

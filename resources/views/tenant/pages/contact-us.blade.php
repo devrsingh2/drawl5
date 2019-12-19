@@ -42,7 +42,7 @@ $page_sub_title = 'Contact Us';
                         @csrf
                         <div class="form-group label-floating">
                             <label class="control-label" for="name">Name</label>
-                            <input class="form-control @error('name') is-invalid @enderror" id="name" type="text" name="name" required data-error="Please enter your name">
+                            <input class="form-control @error('name') is-invalid @enderror" id="name" type="text" name="name" data-error="Please enter your name">
                             @error('name')
                             <div class="help-block with-errors">
                                 {{ $message }}
@@ -52,7 +52,7 @@ $page_sub_title = 'Contact Us';
 
                         <div class="form-group label-floating">
                             <label class="control-label" for="email">Email</label>
-                            <input class="form-control @error('email') is-invalid @enderror" id="email" type="email" name="email" required data-error="Please enter your Email">
+                            <input class="form-control @error('email') is-invalid @enderror" id="email" type="email" name="email" data-error="Please enter your Email">
                             @error('email')
                             <div class="help-block with-errors">
                                 {{ $message }}
@@ -62,7 +62,7 @@ $page_sub_title = 'Contact Us';
 
                         <div class="form-group label-floating">
                             <label class="control-label">Subject</label>
-                            <input class="form-control @error('subject') is-invalid @enderror" id="msg_subject" type="text" name="subject" required data-error="Please enter your message subject">
+                            <input class="form-control @error('subject') is-invalid @enderror" id="msg_subject" type="text" name="subject" data-error="Please enter your message subject">
                             @error('subject')
                             <div class="help-block with-errors">
                                 {{ $message }}
@@ -72,7 +72,7 @@ $page_sub_title = 'Contact Us';
 
                         <div class="form-group label-floating">
                             <label for="message" class="control-label">Message</label>
-                            <textarea class="form-control @error('message') is-invalid @enderror" rows="3" id="message" name="message" required data-error="Write your message"></textarea>
+                            <textarea class="form-control @error('message') is-invalid @enderror" rows="3" id="message" name="message" data-error="Write your message"></textarea>
                             @error('message')
                             <div class="help-block with-errors">
                                 {{ $message }}
@@ -81,7 +81,7 @@ $page_sub_title = 'Contact Us';
                         </div>
 
                         <div class="form-submit mt-5">
-                            <button class="btn btn-common" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
+                            <button class="btn btn-outline-primary" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
                             <div id="msgSubmit" class="h3 text-center hidden"></div>
                             <div class="clearfix"></div>
                         </div>
