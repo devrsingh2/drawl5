@@ -186,41 +186,7 @@ class CustomerController extends Controller
         return response()->json($response);
     }
 
-    public function contactUs(Request $request)
-    {
-        $validator = $this->validate(
-            request(),
-            [
-                'name' => 'required',
-                'email' => 'required|email',
-                'subject' => 'required',
-                'message' => 'required'
-            ]
-        );
-        /*if (isset($validator) && count($validator) === 0) {
 
-            request()->session()->flash('alert-class', 'alert-danger');
-            request()->session()->flash('message', 'Something went wrong, please try again.');
-            return back();
-        }*/
-
-        $email = \App\Setting::find(3)->value;
-        $contact = (object) array(
-            'name' => $request->name,
-            'message' => $request->message,
-            'contact_date' => date('d-m-Y'),
-        );
-        Mail::to($email)->send(new ContactUs($contact));
-        /*$mail = Mail::raw($request->message, function($message) use($email)
-        {
-            $message->to($email)
-                ->from(request()->email)
-                ->subject(request()->subject);
-        });*/
-        request()->session()->flash('alert-class', 'alert-success');
-        request()->session()->flash('message', 'Message sent successfully.');
-        return redirect()->back();
-    }
     public function getBannerData()
     {
         $req_count = Requirement::count();
@@ -239,13 +205,13 @@ class CustomerController extends Controller
         exit;
     }
     public function listNotification(){
-       $all_notification = Notification::with('fromUser')->where('to_user_id', auth()->user()->id)
-           ->where('type','!=','bid_placed')
-           ->orWhereNull('type')
-           ->paginate(10);
-      /* $all_notification = $all_notification->reject(function ($noti){
-          return $noti->type=="bid_placed";
-       });*/
+        $all_notification = Notification::with('fromUser')->where('to_user_id', auth()->user()->id)
+            ->where('type','!=','bid_placed')
+            ->orWhereNull('type')
+            ->paginate(10);
+        /* $all_notification = $all_notification->reject(function ($noti){
+            return $noti->type=="bid_placed";
+         });*/
         return view('tenant.customers.includes.notification', compact('all_notification'));
     }
 
@@ -290,7 +256,7 @@ class CustomerController extends Controller
             $response['message'] = "Mail already exist.";
             return response()->json($response);
         }else{
-        NewsletterSubscription::create(['email'=>$email, 'user_id' => $user_id, 'status' => 1]);
+            NewsletterSubscription::create(['email'=>$email, 'user_id' => $user_id, 'status' => 1]);
             $response['success'] = ['mail subscribed successfully'];
             $response['message'] = "Mail subscribed successfully.";
             return response()->json($response);
@@ -323,7 +289,7 @@ class CustomerController extends Controller
     }
     public function getSetting()
     {
-     return view('tenant.customers.setting');
+        return view('tenant.customers.setting');
     }
     public function updateSetting()
     {
