@@ -21,22 +21,21 @@ $page_sub_title = 'Contact Us';
             </div>
             <div class="row mt-5">
 
-                <div class="col-md-6 contact-widget-section2 wow fadeInUp animated animated" data-wow-delay=".5s" style="visibility: visible;-webkit-animation-delay: .5s; -moz-animation-delay: .5s; animation-delay: .5s;">
-                    <h2 class="subtitle">Find Us</h2>
-                    <div class="find-widget">
-                        <a href="#"><i class="material-icons mdi mdi-home"></i> Magarpatta City, Hadapsar, Pune, Maharashtra 411013</a>
-                    </div>
-                    <div class="find-widget">
-                        <a href="#"><i class="material-icons mdi mdi-email"></i> {{ \App\Setting::find(4)->value }}</a>
-                    </div>
-                    <div class="find-widget">
-                        <a href="#"><i class="material-icons mdi mdi-phone mr-3"></i> {{ \App\Setting::find(3)->value }}</a>
-                    </div>
-                    {{--<div class="find-widget">
-                        <a href="#"><i class="material-icons mdi mdi-earth"></i> http://Material.org</a>
-                    </div>--}}
+                {{--<div class="col-md-6 contact-widget-section2 wow fadeInUp animated animated" data-wow-delay=".5s" style="visibility: visible;-webkit-animation-delay: .5s; -moz-animation-delay: .5s; animation-delay: .5s;">--}}
+                    {{--<h2 class="subtitle">Find Us</h2>--}}
+                    {{--<div class="find-widget">--}}
+                        {{--<a href="#"><i class="material-icons mdi mdi-home"></i> Magarpatta City, Hadapsar, Pune, Maharashtra 411013</a>--}}
+                    {{--</div>--}}
+                    {{--<div class="find-widget">--}}
+                        {{--<a href="#"><i class="material-icons mdi mdi-email"></i> {{ \App\Setting::find(4)->value }}</a>--}}
+                    {{--</div>--}}
+                    {{--<div class="find-widget">--}}
+                        {{--<a href="#"><i class="material-icons mdi mdi-phone mr-3"></i> {{ \App\Setting::find(3)->value }}</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                <div class="col-md-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.99840723707!2d-73.94718868483281!3d40.67400404787648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQwJzI2LjQiTiA3M8KwNTYnNDIuMCJX!5e0!3m2!1sen!2sbd!4v1515262984139" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
                 </div>
-
                 <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
                     <form class="shake" role="form" method="post" action="{{ route('submit-contact-us') }}" id="contactForm1" name="contact-form" data-toggle="validator">
                         @csrf
@@ -90,7 +89,7 @@ $page_sub_title = 'Contact Us';
             </div>
         </div>
     </section>
-    <section id="google-map-area">
+    {{--<section id="google-map-area">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -98,7 +97,7 @@ $page_sub_title = 'Contact Us';
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
 
 @endsection
 @section('footer')

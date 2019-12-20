@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactUs;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 class ContactUsController extends Controller
 {
+    //
+    public function index()
+    {
+        return view('tenant.pages.contact-us');
+    }
 
     public function contactUs(Request $request)
     {

@@ -45,10 +45,10 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        $this->validate($request, [
-            'email' => 'required',
+        $request->validate([
+//            'email' => 'required|email:rfc,dns',
+            'email' => 'required|email:rfc',
             'password' => 'required',
-            'account_status' => '1'
         ]);
         if (auth()->attempt(['email' => $request->email, 'password' => $request->password, 'account_status' => '1'])) {
             // Authentication passed...

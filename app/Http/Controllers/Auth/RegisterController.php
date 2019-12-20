@@ -93,7 +93,7 @@ class RegisterController extends Controller
         $user->account_status = '0';
         $user->activation_code = GeneralHelper::generateReferenceNumber();
         $user->password = Hash::make($request->password);
-        $user->role = $request->role;
+        $user->role = isset($request->role) ? $request->role : '2';
         $user->save();
         $user->activation_link = route('verify-user-email', $user->activation_code);
         Mail::to($user->email)->send(new WelcomeMail($user));

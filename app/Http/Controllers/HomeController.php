@@ -47,11 +47,6 @@ class HomeController extends Controller
         return view('tenant.home', compact('categories' ,'products'));
     }
 
-    public function contactUs()
-    {
-        return view('tenant.pages.contact-us');
-    }
-
     public function addRequirement(Request $request)
     {
 

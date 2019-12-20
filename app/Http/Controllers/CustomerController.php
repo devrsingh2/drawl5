@@ -205,13 +205,13 @@ class CustomerController extends Controller
         exit;
     }
     public function listNotification(){
-       $all_notification = Notification::with('fromUser')->where('to_user_id', auth()->user()->id)
-           ->where('type','!=','bid_placed')
-           ->orWhereNull('type')
-           ->paginate(10);
-      /* $all_notification = $all_notification->reject(function ($noti){
-          return $noti->type=="bid_placed";
-       });*/
+        $all_notification = Notification::with('fromUser')->where('to_user_id', auth()->user()->id)
+            ->where('type','!=','bid_placed')
+            ->orWhereNull('type')
+            ->paginate(10);
+        /* $all_notification = $all_notification->reject(function ($noti){
+            return $noti->type=="bid_placed";
+         });*/
         return view('tenant.customers.includes.notification', compact('all_notification'));
     }
 
@@ -256,7 +256,7 @@ class CustomerController extends Controller
             $response['message'] = "Mail already exist.";
             return response()->json($response);
         }else{
-        NewsletterSubscription::create(['email'=>$email, 'user_id' => $user_id, 'status' => 1]);
+            NewsletterSubscription::create(['email'=>$email, 'user_id' => $user_id, 'status' => 1]);
             $response['success'] = ['mail subscribed successfully'];
             $response['message'] = "Mail subscribed successfully.";
             return response()->json($response);
@@ -289,7 +289,7 @@ class CustomerController extends Controller
     }
     public function getSetting()
     {
-     return view('tenant.customers.setting');
+        return view('tenant.customers.setting');
     }
     public function updateSetting()
     {
