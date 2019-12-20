@@ -1,7 +1,6 @@
-@extends('tenant.vendors.layouts.app')
+@extends('tenant.user.layouts.app')
 
 @section('content')
-
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -9,26 +8,15 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Active Bids Requirements</h1>
+                                <h2>Completed Requirements</h2>
                             </div>
                         </div>
                     </div>
-                    <!-- /# column -->
-                <!--   <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ url('/admin/vendor') }}">Vendor</a></li>
-                                    <li class="breadcrumb-item active">List</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
-                            @if($requirements->count()>0)
+                            @if(($items->count()>0))
                             <div class="card">
                                 <!--     <div class="card-title">
                                         <h4>Posted requirements</h4>
@@ -48,14 +36,13 @@
                                             </tr>
                                             </thead>
 
-                                                @foreach($requirements as $requirement)
+                                                @foreach($items as $requirement)
                                                     <tr>
                                                         <td>{{ $requirement->title }}</td>
                                                         <td>{{ $requirement->user->name }}</td>
                                                         <td>{{ $requirement->user->phone }}</td>
                                                         <td>
                                                             @if($requirement->requirementAdditional)
-
                                                                 <a href="{{ url('/') }}/public/img/requirements/{{ $requirement->requirementAdditional->attachment }}"
                                                                    target="_blank">
                                                                     {{ $requirement->requirementAdditional->attachment }}
@@ -64,7 +51,6 @@
                                                                 --
                                                             @endif
                                                         </td>
-
                                                         <td>
                                                             {{ $requirement->acceptedBid->amount }}
                                                         </td>
@@ -78,7 +64,7 @@
                             </div>
                             @else
                                 <div class="alert alert-danger text-center">
-                                    No Active Bids Requirements
+                                    No Completed Requirements
                                 </div>
                         @endif
                             <!-- /# card -->
@@ -86,7 +72,9 @@
                         <!-- /# column -->
                     </div>
                     <!-- /# row -->
-                    @include('tenant.vendors.includes.footer')
+
+                    @include('tenant.user.includes.footer')
+
                 </section>
             </div>
         </div>

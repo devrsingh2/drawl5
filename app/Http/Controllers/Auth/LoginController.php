@@ -66,7 +66,7 @@ class LoginController extends Controller
                     $redirectTo="/admin";
                     break;
             }
-
+//            dd($redirectTo);
             request()->session()->flash('alert-class', 'alert-success');
             request()->session()->flash('message', 'Welcome back.');
             return redirect()->intended($redirectTo);

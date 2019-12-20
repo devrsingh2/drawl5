@@ -7,7 +7,7 @@
             <ul id="main" style="max-height: 300px; overflow-y: auto">
 
                 <li class="text-center">
-                    <a href="{{route('vendor.notification')}}" class="more-link">See All</a>
+                    <a href="{{route('user.notification')}}" class="more-link">See All</a>
                 </li>
             </ul>
         </div>
@@ -18,7 +18,7 @@
 
         $.ajax({
             type: "GET",
-            url: "{{route('vendor.get-notification')}}",
+            url: "{{route('user.get-notification')}}",
 
             success: function(data){
 

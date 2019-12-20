@@ -1,4 +1,4 @@
-@extends('tenant.vendors.layouts.app')
+@extends('tenant.user.layouts.app')
 @section('header')
     <link href="{{ asset('/public/css/component-chosen.css') }}" rel="stylesheet">
 @endsection
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                     </div>
-                    @include('tenant.vendors.includes.footer')
+                    @include('tenant.user.includes.footer')
                 </section>
             </div>
         </div>

@@ -1,6 +1,6 @@
-@extends('tenant.vendors.layouts.app')
+@extends('tenant.user.layouts.app')
 @section('header')
-    <link href="{{ asset('/public/css/component-chosen.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/component-chosen.css') }}" rel="stylesheet">
 @endsection
 @section('content')
     <div class="content-wrap">
@@ -19,7 +19,7 @@
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('vendor.home') }}">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Dashboard</a></li>
                                     <li class="breadcrumb-item active">Profile</li>
                                 </ol>
                             </div>
@@ -36,8 +36,8 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-form">
-                                        @include('tenant.vendors.includes.validation-messages')
-                                        <form method="post" action="{{ route('vendor.setting') }}">
+                                        @include('tenant.user.includes.validation-messages')
+                                        <form method="post" action="{{ route('user.setting') }}">
                                             @csrf
 
                                             <div class="form-group">
@@ -65,7 +65,7 @@
                         </div>
                         <!-- /# column -->
                     </div>
-                    @include('tenant.vendors.includes.footer')
+                    @include('tenant.user.includes.footer')
                 </section>
             </div>
         </div>

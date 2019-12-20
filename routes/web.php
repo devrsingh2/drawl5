@@ -23,23 +23,23 @@ Route::get('logout', 'Auth\LoginController@getLogout')->name('user.logout');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('verify-user-email/{activation_code}', 'Auth\RegisterController@verifyUserEmail')->name('verify-user-email');
 
-Route::prefix('vendors')->middleware(['auth', 'isVendor'])->group(function () {
-    Route::get('/dashboard', 'VendorController@dashboard')->name('vendor.home');
-    Route::get('/profile', 'VendorController@profile')->name('vendor.profile');
-    Route::post('/update-profile', 'VendorController@updateProfile')->name('vendor.profile.update');
-    Route::get('/settings', 'VendorController@setting')->name('vendor.setting');
-    Route::get('vendors/{id}/place-bid', 'BidsController@placeBid')->name('vendor.place-bid');
+Route::prefix('user')->middleware(['auth', 'IsUser'])->group(function () {
+    Route::get('/dashboard', 'UserController@dashboard')->name('user.home');
+    Route::get('/profile', 'UserController@profile')->name('user.profile');
+    Route::post('/update-profile', 'UserController@updateProfile')->name('user.profile.update');
+    Route::get('/settings', 'UserController@setting')->name('user.setting');
+    Route::get('user/{id}/place-bid', 'BidsController@placeBid')->name('user.place-bid');
     Route::post('place-bid', 'BidsController@submitBid')->name('place-bid');
-    Route::get('active-bid-requirements', 'Vendors\RequirementsController@activeBidRequirements')->name('vendor.active-bid-requirement');
-    Route::get('inprogress-requirements', 'Vendors\RequirementsController@inprogressRequirements')->name('vendor.inprogress-requirement');
-    Route::get('complete-requirement/{id}', 'Vendors\RequirementsController@completeRequirements')->name('vendor.complete-requirement');
-    Route::get('completed-requirements', 'Vendors\RequirementsController@completedRequirements')->name('vendor.completed-requirement');
+    Route::get('active-bid-requirements', 'Vendors\RequirementsController@activeBidRequirements')->name('user.active-bid-requirement');
+    Route::get('inprogress-requirements', 'Vendors\RequirementsController@inprogressRequirements')->name('user.inprogress-requirement');
+    Route::get('complete-requirement/{id}', 'Vendors\RequirementsController@completeRequirements')->name('user.complete-requirement');
+    Route::get('completed-requirements', 'Vendors\RequirementsController@completedRequirements')->name('user.completed-requirement');
 
-    Route::get('setting', 'VendorController@getSetting')->name('vendor.setting');
-    Route::post('setting', 'VendorController@getSetting')->name('vendor.setting');
+    Route::get('setting', 'UserController@getSetting')->name('user.setting');
+    Route::post('setting', 'UserController@getSetting')->name('user.setting');
 
-    Route::get('notification', 'NotificationController@vendorNotification')->name('vendor.notification');
-    Route::get('get-notification', 'NotificationController@getVendorNotificationFromCustomer')->name('vendor.get-notification');
+    Route::get('notification', 'NotificationController@userNotification')->name('user.notification');
+    Route::get('get-notification', 'NotificationController@getVendorNotificationFromCustomer')->name('user.get-notification');
 });
 
 Route::prefix('customer')->middleware(['auth'])->group(function () {

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Mail;
 use Illuminate\Support\Carbon;
 
-class VendorController extends Controller
+class UserController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -27,17 +27,7 @@ class VendorController extends Controller
 
     public function dashboard()
     {
-        $usrCat = UserCategory::with('userRequirement')->where('user_id',  auth()->user()->id)->first();
-        $req_count = 0;
-
-        $req_id = Requirement::where('category_id', $usrCat->category_id)->pluck('id')->toArray();
-        $bid_count = Bid::whereIn('requirement_id', $req_id)->where('created_at', Carbon::today())->count();
-
-        if($usrCat){
-        $req_count = $usrCat->userRequirement()->count( );
-            $req_count = $usrCat->userRequirement()->count();
-        }
-        return view('tenant.vendors.home', compact(['req_count','bid_count']));
+        return view('tenant.user.dashboard', compact(['req_count','bid_count']));
     }
 
     public function profile()
@@ -47,7 +37,7 @@ class VendorController extends Controller
         $user_categories = UserCategory::where('user_id', $user->id)
             ->get()->pluck('category_id')->toArray();
 //        dd($categories);
-        return view('tenant.vendors.vendor.profile', compact('user', 'categories', 'user_categories'));
+        return view('tenant.user.profile', compact('user', 'categories', 'user_categories'));
     }
 
     public function updateProfile(Request $request)
@@ -92,13 +82,13 @@ class VendorController extends Controller
 
         request()->session()->flash('alert-class', 'alert-success');
         request()->session()->flash('message', 'Your profile updated successfully.');
-        return redirect(route('vendor.profile'));
+        return redirect(route('user.profile'));
     }
 
     public function getSetting()
     {
         if (request()->method() == 'GET') {
-            return view('vendors.vendor.setting');
+            return view('tenant.user.setting');
         } else {
             $user = User::find(auth()->user()->id);
             $validator = $this->validate(

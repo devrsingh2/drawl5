@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-form">
-                                        @include('tenant.vendors.includes.validation-messages')
+                                        @include('tenant.user.includes.validation-messages')
                                         <form method="post" action="{{ route('customer.update-setting') }}">
                                             @csrf
                                             <div class="form-group">

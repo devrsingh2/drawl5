@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 
-class IsVendor
+class IsUser
 {
     /**
      * Handle an incoming request.
@@ -17,9 +17,8 @@ class IsVendor
      */
     public function handle($request, Closure $next)
     {
-//        dd(request()->user()->role);
         if (Auth::check()) {
-            if (request()->user()->role != '3') {
+            if (request()->user()->role != '2') {
                 abort('403', 'Unauthorized action.');
             }
         }

@@ -31,14 +31,8 @@ class HomeController extends Controller
         $categories = Category::where('status', 1)->get();
         if (Auth::check())
         {
-            if (request()->user()->role === 3) {
-                return redirect(route('vendor.home'));
-            }
-            else if (request()->user()->role === 4) {
-                //list all posted requirements
-                $requirements = Requirement::where('user_id', Auth::user()->id)
-                    ->paginate(10);
-                return view('tenant.home', compact('categories' ,'products'));
+            if (request()->user()->role === 2) {
+                return redirect(route('user.home'));
             }
             else {
                 return redirect(route('admin.home'));

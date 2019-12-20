@@ -23,7 +23,7 @@
                             @endif
                             @else
 
-                                @include('tenant.vendors.includes.notification')
+                                @include('tenant.user.includes.notification')
 
                                 <!--<li class="header-icon dib"><i class="ti-email"></i>
                                     <div class="drop-down">

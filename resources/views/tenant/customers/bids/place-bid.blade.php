@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    @include('tenant.vendors.includes.footer')
+                    @include('tenant.user.includes.footer')
                 </section>
             </div>
         </div>

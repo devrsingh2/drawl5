@@ -1,6 +1,7 @@
-@extends('tenant.vendors.layouts.app')
+@extends('tenant.user.layouts.app')
 
 @section('content')
+
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -8,15 +9,26 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h2>Completed Requirements</h2>
+                                <h2>Inprogress Requirements</h2>
                             </div>
                         </div>
                     </div>
+                    <!-- /# column -->
+                <!--   <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ url('/admin/vendor') }}">Vendor</a></li>
+                                    <li class="breadcrumb-item active">List</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
-                            @if(($items->count()>0))
+                            @if($items->count()>0)
                             <div class="card">
                                 <!--     <div class="card-title">
                                         <h4>Posted requirements</h4>
@@ -33,10 +45,12 @@
                                                 <th>Attachment</th>
                                                 <th>Amount</th>
                                                 <th>Description</th>
+                                                <th>Action</th>
                                             </tr>
                                             </thead>
 
                                                 @foreach($items as $requirement)
+
                                                     <tr>
                                                         <td>{{ $requirement->title }}</td>
                                                         <td>{{ $requirement->user->name }}</td>
@@ -55,6 +69,13 @@
                                                             {{ $requirement->acceptedBid->amount }}
                                                         </td>
                                                         <td>{{ $requirement->description }}</td>
+                                                        <td>
+                                                            <a class="btn btn-success" href="{{ route('vendor.complete-requirement', [$requirement->id]) }}"
+                                                               onclick="return confirm('Do you really want to complete requirement?')"
+                                                            >
+                                                                Complete
+                                                            </a>
+                                                        </td>
                                                     </tr>
                                                 @endforeach
 
@@ -64,7 +85,7 @@
                             </div>
                             @else
                                 <div class="alert alert-danger text-center">
-                                    No Completed Requirements
+                                    No Inprogress Requirements
                                 </div>
                         @endif
                             <!-- /# card -->
@@ -73,7 +94,7 @@
                     </div>
                     <!-- /# row -->
 
-                    @include('tenant.vendors.includes.footer')
+                    @include('tenant.user.includes.footer')
 
                 </section>
             </div>
