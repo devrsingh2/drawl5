@@ -4,35 +4,61 @@
         <div class="container">
             <div class="row justify-content-between">
 
-                <div class="col-6 col-sm-4 col-lg-2">
-                    <div class="single-footer-widget mb-80">
-                        <!-- Widget Title -->
-                        <h5 class="widget-title">Services</h5>
-
-                        <!-- Footer Nav -->
-                        <ul class="footer-nav">
-                            <li><a href="#">CAD</a></li>
-                            <li><a href="#">CAM</a></li>
-                            <li><a href="#">Customised solution</a></li>
-                        </ul>
-                    </div>
-                </div>
-
+                <!-- Single Footer Widget Area -->
                 <div class="col-6 col-sm-4 col-lg-2">
                     <div class="single-footer-widget mb-80">
                         <!-- Widget Title -->
                         <h5 class="widget-title">Products</h5>
+
                         <!-- Footer Nav -->
                         <ul class="footer-nav">
-                            <li><a href="#">Print manager</a></li>
-                            <li><a href="#">Machine scope</a></li>
-                            <li><a href="#">CNC machines</a></li>
-                            <li><a href="#">Torque wrench</a></li>
-                            <li><a href="#">QC data collector</a></li>
+                            <li><a href="#">Shared hosting</a></li>
+                            <li><a href="#">WordPress hosting</a></li>
+                            <li><a href="#">Vps hosting</a></li>
+                            <li><a href="#">Dedicated hosting</a></li>
+                            <li><a href="#">Reseller hosting</a></li>
+                            <li><a href="#">Hosting features</a></li>
                         </ul>
                     </div>
                 </div>
 
+                <!-- Single Footer Widget Area -->
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Programs</h5>
+
+                        <!-- Footer Nav -->
+                        <ul class="footer-nav">
+                            <li><a href="#">WordPress</a></li>
+                            <li><a href="#">Affiliates</a></li>
+                            <li><a href="#">Marketing services</a></li>
+                            <li><a href="#">WordPress guide</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Awards &amp; Reviews</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget Area -->
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h5 class="widget-title">Products</h5>
+
+                        <!-- Footer Nav -->
+                        <ul class="footer-nav">
+                            <li><a href="#">Shared hosting</a></li>
+                            <li><a href="#">WordPress hosting</a></li>
+                            <li><a href="#">Vps hosting</a></li>
+                            <li><a href="#">Dedicated hosting</a></li>
+                            <li><a href="#">Reseller hosting</a></li>
+                            <li><a href="#">Hosting features</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget Area -->
                 <div class="col-6 col-sm-4 col-lg-2">
                     <div class="single-footer-widget mb-80">
                         <!-- Widget Title -->
@@ -79,15 +105,20 @@
         </div>
     </div>
     <!-- Bottom Footer Area -->
-    {{--<div class="bottom-footer-area bg-gray">
+    <div class="bottom-footer-area bg-gray">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
+                    <!-- Copywrite Text -->
                     <div class="copywrite-text">
-                        <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i style="color: red" class="fa fa-heart-o" aria-hidden="true"></i> by <a href="{{ config('app.url') }}" target="_blank">{{ config('app.name') }}</a></p>
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i style="color: red" class="fa fa-heart-o" aria-hidden="true"></i> by <a href="{{ config('app.url') }}" target="_blank">{{ config('app.name') }}</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
+                    <!-- Payment Methods -->
                     <div class="payments-methods d-flex align-items-center">
                         <p>Payments We Accept</p>
                         <i class="fa fa-cc-visa" aria-hidden="true"></i>
@@ -100,5 +131,5 @@
                 </div>
             </div>
         </div>
-    </div>--}}
+    </div>
 </footer>

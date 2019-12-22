@@ -1,7 +1,7 @@
 @extends('tenant.admin.layouts.app')
 @section('header')
-    <link href="{{ asset('/public/css/component-chosen.css') }}" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+    <link href="{{ asset('css/component-chosen.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/tenant/backend/css/summernote-bs4.css') }}" rel="stylesheet">
 @endsection
 @section('content')
     <div class="content-wrap">
@@ -60,7 +60,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group row mb-0">
-                                                <button type="submit" class="btn btn-primary btn-block">+ Add CMS</button>
+                                                <button type="submit" name="btnSubmit" class="btn btn-primary btn-block">+ Add CMS</button>
                                             </div>
                                         </form>
                                     </div>
@@ -82,9 +82,9 @@
     </div>
 @endsection
 @section('footer')
-    <script src="{{ asset('/public/js/chosen.jquery.min.js') }}" ></script>
-    <script src="{{ asset('/public/js/select-all.js') }}" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+    <script src="{{ asset('js/chosen.jquery.min.js') }}" ></script>
+    <script src="{{ asset('js/select-all.js') }}" ></script>
+    <script src="{{ asset('assets/tenant/backend/js/summernote-bs4.js') }}"></script>
     <script>
         $('#text-editor').summernote({
             placeholder: 'Enter your content',
