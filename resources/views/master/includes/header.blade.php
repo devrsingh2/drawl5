@@ -59,28 +59,27 @@
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                                {{--                                <li><a href="./hosting.html">Hosting</a></li>--}}
-                                <li><a href="#">Pages</a>
+                                <li><a href="{{ route('cms', 'about') }}">About Us</a></li>
+                                <li><a href="#">Products</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ route('home') }}">- Home</a></li>
-                                        {{--                                        <li><a href="./hosting.html">- Hosting</a></li>--}}
-                                        <li><a href="{{ route('cms', 'about') }}">- About</a></li>
-                                        <li><a href="{{ route('blogs') }}">- Blog</a></li>
-                                        {{--                                        <li><a href="./single-blog.html">- Blog Details</a></li>--}}
-                                        {{--                                        <li><a href="./404.html">- 404</a></li>--}}
-                                        {{--                                        <li><a href="./coming-soon.html">- Coming Soon</a></li>--}}
-                                        {{--<li><a href="#">- Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                            </ul>
-                                        </li>--}}
+                                        <li><a href="#">Print Manager</a></li>
+                                        <li><a href="#">Machine Scope</a></li>
+                                        <li><a href="#">CNC Machine</a></li>
+                                        <li><a href="#">Torque Wrench</a></li>
+                                        <li><a href="#">QC Data Collector</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('cms', 'about') }}">About</a></li>
-                                <li><a href="{{ route('blogs') }}">Blog</a></li>
+                                <li><a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">CNC</a></li>
+                                        <li><a href="#">CAM</a></li>
+                                        <li><a href="#">Customised Process Solutions</a></li>
+                                        <li><a href="#">International Marketing</a></li>
+                                        <li><a href="#">Part Manufacturing</a></li>
+                                        <li><a href="#">Prototyping</a></li>
+                                        <li><a href="#">Web Applications</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="{{ route('contact-us') }}">Contact</a></li>
                             </ul>
 

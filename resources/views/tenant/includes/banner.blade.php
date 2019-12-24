@@ -41,7 +41,8 @@
                         <source srcset="https://dummyimage.com/2000x500/007aeb/4196e5" media="(min-width: 1400px)">
                         <source srcset="https://dummyimage.com/1400x500/#007aeb/4196e5" media="(min-width: 769px)">
                         <source srcset="https://dummyimage.com/800x500/007aeb/4196e5" media="(min-width: 577px)">
-                        <img srcset="https://dummyimage.com/600x500/007aeb/4196e5" alt="responsive image" class="d-block img-fluid">
+                        {{--<img srcset="https://dummyimage.com/600x500/007aeb/4196e5" alt="responsive image" class="d-block img-fluid">--}}
+                        <img srcset="{{ asset('assets/images/banner-4.jpg') }}" alt="responsive image" class="d-block img-fluid">
                     </picture>
 
                     <div class="carousel-caption">
