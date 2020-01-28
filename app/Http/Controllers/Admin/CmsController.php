@@ -83,6 +83,7 @@ class CmsController extends Controller
         request()->session()->flash('message', 'Cms deleted successfully.');
         return redirect(route('cms.list'));
     }
+
     public function getCmsPages($slug)
     {
       $page_content = Cms::where('slug', $slug)->first();

@@ -26,8 +26,8 @@ class UsersController extends Controller
 
     public function createAdmin()
     {
-        $roles = Role::where('status', 1)
-            ->where(function ($q) {
+//        $roles = Role::where('status', 1)
+        $roles = Role::where(function ($q) {
                 $q->where('id', '<>', 1)
                     ->where('id', '<>', 3)
                     ->where('id', '<>', 4);

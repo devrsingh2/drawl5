@@ -32,14 +32,14 @@
                         </ul>
                     </li>
                     <li class="label">Other Resources</li>
-                    <li @if(request()->segment(2) == 'products') class="active" @endif ><a href="{{ route('products.list') }}"><i class="ti-file"></i> Products </a></li>
+                    {{--<li @if(request()->segment(2) == 'products') class="active" @endif ><a href="{{ route('products.list') }}"><i class="ti-file"></i> Products </a></li>
 
                     <li @if(request()->segment(2) == 'requirements' || request()->segment(2) == 'customers')class="active open" @endif>
                         <a class="sidebar-sub-toggle"><i class="ti-view-grid"></i> Requirements <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li @if(request()->segment(2) == 'requirements') class="active" @endif ><a href="{{ route('requirements.list') }}">Requirements</a></li>
                         </ul>
-                    </li>
+                    </li>--}}
 
                     <li @if(request()->segment(2) == 'faq') class="active" @endif ><a href="{{ route('faq.list') }}"><i class="ti-file"></i> FAQ </a></li>
                     <li @if(request()->segment(2) == 'blog') class="active" @endif ><a href="{{ route('blog.list') }}"><i class="ti-file"></i> Blog </a></li>

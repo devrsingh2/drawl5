@@ -13,7 +13,8 @@
                 <div class="col-6">
                     <div class="top-header-content">
                         <!-- Login -->
-                        <a href="{{ route('admin.login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login / Register</span></a>
+                        {{--<a href="{{ route('admin.login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login / Register</span></a>--}}
+                        <a href="{{ route('admin.login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login</span></a>
                         <!-- Language -->
                         {{--<div class="dropdown">
                             <a class="btn pr-0 dropdown-toggle" href="#" role="button" id="langdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/tenant/frontend/img/core-img/eng.png') }}" alt=""> English</a>
@@ -59,7 +60,7 @@
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="{{ route('cms', 'about') }}">About Us</a></li>
+                                {{--<li><a href="{{ route('cms', 'about') }}">About Us</a></li>
                                 <li><a href="#">Products</a>
                                     <ul class="dropdown">
                                         <li><a href="#">Print Manager</a></li>
@@ -79,7 +80,7 @@
                                         <li><a href="#">Prototyping</a></li>
                                         <li><a href="#">Web Applications</a></li>
                                     </ul>
-                                </li>
+                                </li>--}}
                                 <li><a href="{{ route('contact-us') }}">Contact</a></li>
                             </ul>
 

@@ -16,8 +16,7 @@ yarn-error.log
 .env
 /.gitattributes
 /.editorconfig
-/.idea/vcs.xml
-/.idea/workspace.xml
+/.idea
 /readme.md
 /nbproject/private/
 /nbproject/*

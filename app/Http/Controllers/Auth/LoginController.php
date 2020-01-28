@@ -54,7 +54,6 @@ class LoginController extends Controller
             // Authentication passed...
 //            $redirectTo="/home";
             $role = auth()->user()->role;
-//            dd($role);
             switch ($role) {
                 case 1:
                     $redirectTo="/admin";

@@ -27,12 +27,17 @@ Route::domain(config('app.domain'))->group(function () {
     Route::get('delete-domain/{id}', 'Master\MasterController@deleteDomain')
         ->name('admin.domain.delete')->middleware('superAdmin');
 
+    Route::get('contact-us', 'Master\ContactController@contactUs')->name('contact-us');
+    Route::post('contactus', 'Master\ContactController@postContactUs')
+        ->name('master-contactus');
 
     Route::post('contact-admin', 'Master\ContactController@contactAdmin')
         ->name('domain.contact-admin');
 
     Route::post('subscribe-email', 'Master\HomeController@subscribeEmail')
         ->name('domain.subscribe-email');
+
+//    Route::get('pages/{slug}', 'Master\CmsController@getCmsPages')->name('cms');
 
     // Catch All Route
     Route::any('{any}', function () {
