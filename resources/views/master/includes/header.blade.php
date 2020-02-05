@@ -15,6 +15,7 @@
                         <!-- Login -->
                         {{--<a href="{{ route('admin.login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login / Register</span></a>--}}
                         <a href="{{ route('admin.login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login</span></a>
+                        <a href="{{ route('admin.domain-request') }}"><i class="fa fa-registered" aria-hidden="true"></i> <span>Signup</span></a>
                         <!-- Language -->
                         {{--<div class="dropdown">
                             <a class="btn pr-0 dropdown-toggle" href="#" role="button" id="langdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/tenant/frontend/img/core-img/eng.png') }}" alt=""> English</a>

@@ -112,7 +112,7 @@ class MasterController extends Controller
             ]
         );
         $request->session()->flash('alert-class', 'alert-success');
-        $request->session()->flash('message', 'Your have logged out successfully.');
+        $request->session()->flash('message', 'Your registered successfully.');
         return redirect()->back();
     }
 
