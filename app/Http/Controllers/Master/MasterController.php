@@ -10,6 +10,7 @@ use Hyn\Tenancy\Models\Hostname;
 use Hyn\Tenancy\Models\Website;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
@@ -121,6 +122,10 @@ class MasterController extends Controller
         return view('master.auth.login');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function login(Request $request)
     {
         $validator = $this->validate(
@@ -135,6 +140,99 @@ class MasterController extends Controller
                 'password.required' => "Please enter your registerd password."
             ]
         );
+        $arr = [];
+        $arr['email'] = $request->email;
+        $user = AdminUser::where('email', $arr['email'])
+            ->first();
+        if (isset($user) && $user->email === $request->email) {
+            if (Hash::check($request->password, $user->password)) {
+                //add logic here
+                $user_data = (object) [
+                    'id' => $user->id,
+                    'email' => $user->email,
+                    'name' => $user->name,
+                    'role' => $user->role,
+                    'user_role' => $user->user_role,
+                ];
+                $request->session()->put('userdata', $user_data);
+                $request->session()->flash('alert-class', 'alert-success');
+                $request->session()->flash('message', 'Your are logged in successfully.');
+                if ($user_data->role === 1) {
+                    return redirect()->intended(route('admin.administrator'));
+                }
+            }
+            else {
+                $request->session()->flash('alert-class', 'alert-danger');
+                $request->session()->flash('message', 'Your email or password is incorrect, please enter correct detail.');
+            }
+        }
+        else {
+            $request->session()->flash('alert-class', 'alert-danger');
+            $request->session()->flash('message', 'Your email or password is incorrect, please enter correct detail.');
+        }
+        return redirect()->back();
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showUserLoginForm()
+    {
+        return view('master.auth.user-login');
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postUserlogin(Request $request)
+    {
+        $validator = $this->validate(
+            $request,
+            [
+                'email' => 'required|email',
+                'password' => 'required'
+            ],
+            [
+                'email.required' => "Please enter your registerd email address.",
+                'email.email' => "Please enter a valid email address.",
+                'password.required' => "Please enter your registerd password."
+            ]
+        );
+//        $connectionName = DB::setDefaultConnection('43aa2cc2c2224382bfabfa001d765194');
+        $allDatabases = DB::table('websites as w')->select('w.id', 'w.uuid as databaseName', 'hn.fqdn')
+            ->join('hostnames as hn','hn.website_id','=','w.id')
+            ->get();
+        if (isset($allDatabases)) {
+            foreach ($allDatabases as $key => $value) {
+                $userData = DB::table($value->databaseName.'.users as u')
+                    ->select('u.*')
+                    ->where('u.email', $request->email)
+                    ->first();
+                if (isset($userData)) {
+                    if (Hash::check($request->password, $userData->password)) {
+                        $user_data = (object) [
+                            'id' => $userData->id,
+                            'email' => $userData->email,
+                            'name' => $userData->name,
+                            'role' => $userData->role
+                        ];
+                        $request->session()->put('tenantUserData', $user_data);
+                        $request->session()->flash('alert-class', 'alert-success');
+                        $request->session()->flash('message', 'Your have logged in successfully.');
+                        return redirect()->to('http://'.$value->fqdn);
+                    }
+                }
+                else {
+                    continue;
+                }
+            }
+        }
+        /*$userData = DB::table('43aa2cc2c2224382bfabfa001d765194.users as u')
+            ->select(['u.*'])
+            ->get();*/
+
+        dd('hiii');
         $arr = [];
         $arr['email'] = $request->email;
         $user = AdminUser::where('email', $arr['email'])

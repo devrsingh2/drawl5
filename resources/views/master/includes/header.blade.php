@@ -14,7 +14,7 @@
                     <div class="top-header-content">
                         <!-- Login -->
                         {{--<a href="{{ route('admin.login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login / Register</span></a>--}}
-                        <a href="{{ route('admin.login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login</span></a>
+                        <a href="{{ route('admin.user-login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login</span></a>
                         <a href="{{ route('admin.domain-request') }}"><i class="fa fa-registered" aria-hidden="true"></i> <span>Signup</span></a>
                         <!-- Language -->
                         {{--<div class="dropdown">
