@@ -24,7 +24,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('verify-user-email/{activation_code}', 'Auth\RegisterController@verifyUserEmail')->name('verify-user-email');
 
 Route::prefix('user')->middleware(['auth', 'IsUser'])->group(function () {
-    Route::get('/dashboard', 'UserController@dashboard')->name('user.home');
+    Route::get('/dashboard', 'UserController@dashboard')->name('user.dashboard');
     Route::get('/profile', 'UserController@profile')->name('user.profile');
     Route::post('/update-profile', 'UserController@updateProfile')->name('user.profile.update');
     Route::get('/settings', 'UserController@setting')->name('user.setting');

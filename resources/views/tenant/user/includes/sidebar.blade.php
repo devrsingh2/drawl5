@@ -1,15 +1,15 @@
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
     <div class="nano">
         <div class="nano-content">
-            <div class="logo"><a href="{{ route('user.home') }}"><span>Reverse-Auction</span></a></div>
-           
+            <div class="logo"><a href="{{ route('home') }}"><span>Reverse-Auction</span></a></div>
+
             <ul>
                 <li class="label">Resources</li>
                 <li @if(request()->segment(2) == 'dashboard' || request()->segment(2) == 'profile' || request()->segment(2) == 'setting') class="active open" @endif>
                     <a class="sidebar-sub-toggle"><i class="ti-home"></i> Main <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
                         <li @if(request()->segment(2) === 'dashboard') class="active" @endif >
-                            <a href="{{ route('user.home') }}">Dashboard</a>
+                            <a href="{{ route('user.dashboard') }}">Dashboard</a>
                         </li>
 
                         <li @if(request()->segment(2) === 'profile') class="active" @endif >
@@ -41,7 +41,7 @@
                     </ul>
                 </li>
 
-               <li><a><i class="ti-close"></i> Logout</a></li>
+                <li><a><i class="ti-close"></i> Logout</a></li>
             </ul>
         </div>
     </div>

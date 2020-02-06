@@ -12,17 +12,21 @@
 
                 <div class="col-6">
                     <div class="top-header-content">
+                    @guest
                         <!-- Login -->
-                        <a href="{{ route('login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login / Register</span></a>
-                        <!-- Language -->
-                        {{--<div class="dropdown">
-                            <a class="btn pr-0 dropdown-toggle" href="#" role="button" id="langdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/tenant/frontend/img/core-img/eng.png') }}" alt=""> English</a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="langdropdown">
-                                <a class="dropdown-item" href="#">- Latvian</a>
-                                <a class="dropdown-item" href="#">- Hindi</a>
-                                <a class="dropdown-item" href="#">- Bangla</a>
-                            </div>
-                        </div>--}}
+                            <a href="{{ route('login') }}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Login / Register</span></a>
+                            <!-- Language -->
+                            {{--<div class="dropdown">
+                                <a class="btn pr-0 dropdown-toggle" href="#" role="button" id="langdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/tenant/frontend/img/core-img/eng.png') }}" alt=""> English</a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="langdropdown">
+                                    <a class="dropdown-item" href="#">- Latvian</a>
+                                    <a class="dropdown-item" href="#">- Hindi</a>
+                                    <a class="dropdown-item" href="#">- Bangla</a>
+                                </div>
+                            </div>--}}
+                        @else
+                                <a href="{{ route('user.dashboard') }}"><i class="fa fa-dashboard" aria-hidden="true"></i> <span>Hi {{ auth()->user()->name }}</span></a>
+                        @endguest
                     </div>
                 </div>
 

@@ -37,15 +37,7 @@ class HomeController extends Controller
         }
         $products = Product::where('status', 1)->with('productAdditional')->with('productCategories')->get();
         $categories = Category::where('status', 1)->get();
-        if (Auth::check())
-        {
-            if (request()->user()->role === 2) {
-                return redirect(route('user.home'));
-            }
-            else {
-                return redirect(route('admin.home'));
-            }
-        }
+
         return view('tenant.home', compact('categories' ,'products'));
     }
 
