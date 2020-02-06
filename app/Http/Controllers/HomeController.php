@@ -27,6 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $userLoginId = request()->get('loginId');
+        if (isset($userLoginId) && $userLoginId != '') {
+            if (auth()->loginUsingId(base64_decode($userLoginId))) {
+                request()->session()->flash('alert-class', 'alert-success');
+                request()->session()->flash('message', 'Welcome back.');
+                return redirect()->intended('home');
+            }
+        }
         $products = Product::where('status', 1)->with('productAdditional')->with('productCategories')->get();
         $categories = Category::where('status', 1)->get();
         if (Auth::check())

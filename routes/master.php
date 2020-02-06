@@ -52,3 +52,5 @@ Route::domain(config('app.domain'))->group(function () {
         abort(404);
     })->where('any', '.*');
 });
+
+//limexweb

@@ -203,6 +203,7 @@ class MasterController extends Controller
         $allDatabases = DB::table('websites as w')->select('w.id', 'w.uuid as databaseName', 'hn.fqdn')
             ->join('hostnames as hn','hn.website_id','=','w.id')
             ->get();
+        $isUserExist = '';
         if (isset($allDatabases)) {
             foreach ($allDatabases as $key => $value) {
                 $userData = DB::table($value->databaseName.'.users as u')
@@ -211,22 +212,29 @@ class MasterController extends Controller
                     ->first();
                 if (isset($userData)) {
                     if (Hash::check($request->password, $userData->password)) {
+                        $isUserExist = 'Yes';
                         $user_data = (object) [
                             'id' => $userData->id,
                             'email' => $userData->email,
                             'name' => $userData->name,
                             'role' => $userData->role
                         ];
-                        $request->session()->put('tenantUserData', $user_data);
+//                        $request->session()->put('tenantUserData', $user_data);
                         $request->session()->flash('alert-class', 'alert-success');
                         $request->session()->flash('message', 'Your have logged in successfully.');
-                        return redirect()->to('http://'.$value->fqdn);
+                        return redirect()->to('http://'.$value->fqdn.'?loginId='.base64_encode($userData->id));
                     }
                 }
                 else {
+                    $isUserExist = 'No';
                     continue;
                 }
             }
+        }
+        if ($isUserExist == "No") {
+            $request->session()->flash('alert-class', 'alert-danger');
+            $request->session()->flash('message', 'Your email or password is incorrect, please enter correct detail.');
+            return redirect()->back();
         }
         /*$userData = DB::table('43aa2cc2c2224382bfabfa001d765194.users as u')
             ->select(['u.*'])
