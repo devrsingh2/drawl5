@@ -41,6 +41,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <!-- jquery vendor -->
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    {{--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>--}}
 
     @yield('header')
 </head>

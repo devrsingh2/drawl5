@@ -22,23 +22,14 @@
                     </ul>
                 </li>
                 <li class="label">Resources</li>
-                <li @if(request()->segment(2) == 'notification') class="active" @endif ><a href="{{ route('user.notification') }}"><i class="ti-file"></i> Notifications </a></li>
-                <li @if(request()->segment(2) == 'active-bid-requirements'
-                || request()->segment(2) == 'inprogress-requirements'
-                || request()->segment(2) == 'completed-requirement'
-                ) class="active open" @endif >
-                    <a class="sidebar-sub-toggle"><i class="ti-user"></i>  Requirement  <span class="sidebar-collapse-icon ti-angle-down"></span></a>
-                    <ul>
-                        <li @if(request()->segment(2) == 'active-bid-requirements') class="active" @endif >
-                            <a href="{{ route('user.active-bid-requirement') }}">Active Bid Requirement</a>
-                        </li>
-                        <li @if(request()->segment(2) == 'inprogress-requirements') class="active" @endif >
-                            <a href="{{ route('user.inprogress-requirement') }}">Inprogress Requirement</a>
-                        </li>
-                        <li @if(request()->segment(2) == 'completed-requirements') class="active" @endif >
-                            <a href="{{ route('user.completed-requirement') }}">Completed Requirement</a>
-                        </li>
-                    </ul>
+                <li @if(request()->segment(2) == 'ctc') class="active" @endif >
+                    <a href="{{ route('user.ctc') }}"><i class="ti-file"></i> Cycle Time Calculation </a>
+                </li>
+                <li @if(request()->segment(2) == 'rfq') class="active" @endif >
+                    <a href="{{ route('user.rfq') }}"><i class="ti-file"></i> RFQ </a>
+                </li>
+                <li @if(request()->segment(2) == 'machine-comparison') class="active" @endif >
+                    <a href="{{ route('user.machine-comparison') }}"><i class="ti-file"></i> Machine Comparison </a>
                 </li>
 
                 <li><a><i class="ti-close"></i> Logout</a></li>

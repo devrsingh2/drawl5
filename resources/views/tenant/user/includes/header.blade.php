@@ -20,12 +20,12 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
 
-                            @endif
-                            @else
+                        @endif
+                        @else
 
-                                @include('tenant.user.includes.notification')
+                            {{--@include('tenant.user.includes.notification')--}}
 
-                                <!--<li class="header-icon dib"><i class="ti-email"></i>
+                            <!--<li class="header-icon dib"><i class="ti-email"></i>
                                     <div class="drop-down">
                                         <div class="dropdown-content-heading">
                                             <span class="text-left">2 New Messages</span>

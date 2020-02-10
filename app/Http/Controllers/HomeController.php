@@ -43,11 +43,9 @@ class HomeController extends Controller
 
     public function addRequirement(Request $request)
     {
-
         $title=$request->title;
         $description=$request->description;
         $user_id=Auth::user()->id;
-
         Requirement::create(['user_id'=>$user_id,'title'=>$title,'description'=>$description]);
     }
 }

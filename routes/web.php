@@ -29,56 +29,23 @@ Route::prefix('user')->middleware(['auth', 'IsUser'])->group(function () {
     Route::post('/update-profile', 'UserController@updateProfile')->name('user.profile.update');
     Route::get('/settings', 'UserController@setting')->name('user.setting');
     Route::get('user/{id}/place-bid', 'BidsController@placeBid')->name('user.place-bid');
-    Route::post('place-bid', 'BidsController@submitBid')->name('place-bid');
-    Route::get('active-bid-requirements', 'Vendors\RequirementsController@activeBidRequirements')->name('user.active-bid-requirement');
-    Route::get('inprogress-requirements', 'Vendors\RequirementsController@inprogressRequirements')->name('user.inprogress-requirement');
-    Route::get('complete-requirement/{id}', 'Vendors\RequirementsController@completeRequirements')->name('user.complete-requirement');
-    Route::get('completed-requirements', 'Vendors\RequirementsController@completedRequirements')->name('user.completed-requirement');
+
+    //CTC
+    Route::get('/ctc', 'CtcController@index')->name('user.ctc');
+    Route::post('upload-drawing', 'CtcController@uploadDrawing')->name('user.upload-drawing');
+
+    //RFQ
+    Route::get('/rfq', 'RfqController@index')->name('user.rfq');
+
+    //Machine Comparison
+    Route::get('/machine-comparison', 'MachineComparisonController@index')->name('user.machine-comparison');
+
 
     Route::get('setting', 'UserController@getSetting')->name('user.setting');
     Route::post('setting', 'UserController@getSetting')->name('user.setting');
 
     Route::get('notification', 'NotificationController@userNotification')->name('user.notification');
     Route::get('get-notification', 'NotificationController@getVendorNotificationFromCustomer')->name('user.get-notification');
-});
-
-Route::prefix('customer')->middleware(['auth'])->group(function () {
-    Route::get('dashboard', 'CustomerController@dashboard')->name('customer.dashboard');
-    Route::post('get-product-data', 'RequirementController@getProductInfo')->name('get-product-data');
-    Route::get('place-requirement/{id?}', 'RequirementController@placeRequirement')->name('place-requirement');
-    Route::get('place-requirement-using-category/{id?}', 'RequirementController@placeRequirementUsingCategory')->name('place-requirement-using-category');
-    Route::post('post-requirement', 'RequirementController@postRequirement')->name('post-requirement');
-    Route::post('post-requirement-payment-callback/{data}', 'RequirementController@submitRequirementPaymentCallback')->name('post-requirement-payment-callback');
-    Route::get('get-requirements', 'RequirementController@getRequirement')->name('get-requirement');
-    Route::get('get-profile', 'CustomerController@getProfile')->name('get-profile');
-    Route::post('update-password', 'CustomerController@updatePassword')->name('customer.update-password');
-    Route::post('upload-profile-img', 'CustomerController@uploadProfileImg')->name('customer.upload-profile-img');
-    Route::post('update-profile-text', 'CustomerController@updateProfileText')->name('update-profile-text');
-    Route::post('contact-us', 'CustomerController@contactUs')->name('contact-us');
-    Route::get('list-bids/{id}', 'BidsController@listBids')->name('customer.list-bids');
-    Route::get('accept-bid/{id}/{bidid}', 'BidsController@acceptBid')->name('customer.accept-bid');
-    Route::post('payment-bid/{id}/{bidid}', 'BidsController@paymentCallback')->name('customer.bid-payment-callback');
-    Route::get('reject-bid/{id}/{bidid}', 'BidsController@rejectBid')->name('customer.reject-bid');
-    Route::get('banner-data', 'CustomerController@getBannerData')->name('customer.banner-data');
-    Route::get('dashboard-profile', 'CustomerController@getDashboardProfile')->name('customer.dashboard-profile');
-    Route::post('dashboard-profile-update', 'CustomerController@updateDashboardProfile')->name('customer.dashboard-profile-update');
-    Route::get('setting', 'CustomerController@getSetting')->name('customer.setting');
-    Route::post('setting', 'CustomerController@updateSetting')->name('customer.update-setting');
-
-    //customer requirement
-    Route::get('open-requirement', 'RequirementController@openRequirements')->name('open-requirement');
-    Route::get('requirement-detail/{id}', 'RequirementController@requirementDetail')->name('customer.requirement-detail');
-    Route::get('inprogress-requirement', 'RequirementController@inProgressRequirements')->name('inprogress-requirement');
-    Route::get('completed-requirement', 'RequirementController@completedRequirements')->name('completed-requirement');
-
-    Route::get('purchase', 'RequirementController@customerPurchase')->name('customer.purchase');
-    Route::get('payment-history', 'RequirementController@customerPaymentHistory')->name('customer.payment-history');
-    Route::get('list-notification', 'CustomerController@listNotification')->name('customer.list-notification');
-
-    //motioz
-    Route::get('place-bid/{id}', 'BidsController@customerPlaceBid')->name('customer.place-bid');
-    Route::post('place-bid', 'BidsController@submitCustomerBid')->name('customer.submit-bid');
-
 });
 
 Route::post('join-newsletter', 'CustomerController@joinNewsletter')->name('customer.join-newsletter');

@@ -19,7 +19,7 @@
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
                                     <li class="breadcrumb-item active">Profile</li>
                                 </ol>
                             </div>
